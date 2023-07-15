@@ -23,15 +23,15 @@ public class Tabuleiro {
     public void jogada(int coluna, Jogador jogador){
         boolean movimentoValido = true;
         //checar se movimento é valido
-        if((coluna < 0) || (coluna >= colunas)){
+        if((coluna <= 0) || (coluna > colunas)){
             movimentoValido = false;
             System.out.println("essa coluna nao existe");
         }
         //procurar espaco livre na coluna
         if(movimentoValido) {
             for (int x = linhas - 1; x >= 0; x--) {
-                if (tabuleiro[x][coluna] == '0') {
-                    tabuleiro[x][coluna] = jogador.getId();
+                if (tabuleiro[x][coluna-1] == '0') {
+                    tabuleiro[x][coluna-1] = jogador.getId();
                     break;
                 }
             }
