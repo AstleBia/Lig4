@@ -2,7 +2,21 @@ public class Tabuleiro {
     private int linhas = 6;
     private int colunas = 7;
     private char[][] tabuleiro = new char[linhas][colunas];
-    public Tabuleiro(){
+
+    public int getLinhas(){
+        return linhas;
+    }
+    public int getColunas(){
+        return colunas;
+    }
+    public char[][] getTabuleiro(){
+        return tabuleiro;
+    }
+    public void setTabuleiro(int linha, int coluna,char valor){
+        this.tabuleiro[linha][coluna] = valor;
+    }
+
+    public void zerarTabuleiro(){
         for(int x = 0; x<linhas; x++){
             for(int y = 0; y<colunas;y++){
                 tabuleiro[x][y] = '0';

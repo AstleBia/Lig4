@@ -6,6 +6,15 @@ public class Jogo {
     Scanner input = new Scanner(System.in);
     Jogador jogador1 = new Jogador("jogador 1");
     Jogador jogador2 = new Jogador("jogador 2");
+    public boolean getManterJogo(){
+        return manterJogo;
+    }
+    public void setManterJogo(boolean manterJogo){
+        this.manterJogo = manterJogo;
+    }
+    public boolean getVezJogadorUm(){
+        return vezJogadorUm;
+    }
     public void criarJogadores(){
         System.out.println("digite o simbolo do jogador 1: ");
         char1 = input.next().charAt(0);
@@ -20,6 +29,7 @@ public class Jogo {
     }
     public void iniciar(){
        Tabuleiro tab = new Tabuleiro();
+       tab.zerarTabuleiro();
        tab.printarTabuleiro();
        while(manterJogo){
            int coluna;
