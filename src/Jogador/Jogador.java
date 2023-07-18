@@ -1,3 +1,5 @@
+package Jogador;
+
 public class Jogador {
     private char idJogador;
     private String nome;

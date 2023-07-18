@@ -1,4 +1,8 @@
-public class JogoTurbo extends Jogo{
+package Jogo;
+import Tabuleiros.Lig4Turbo;
+
+
+public class JogoTurbo extends Jogo {
     public void iniciar(){
         Lig4Turbo tab = new Lig4Turbo();
         tab.zerarTabuleiro();

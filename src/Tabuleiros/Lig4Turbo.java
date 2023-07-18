@@ -1,4 +1,7 @@
-public class Lig4Turbo extends Tabuleiro{
+package Tabuleiros;
+import Jogador.Jogador;
+
+public class Lig4Turbo extends Tabuleiro {
     public void jogada(int coluna, Jogador jogador){
         char[][] tab = getTabuleiro();
         boolean movimentoValido = true;

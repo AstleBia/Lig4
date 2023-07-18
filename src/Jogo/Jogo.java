@@ -1,3 +1,6 @@
+package Jogo;
+import Jogador.Jogador;
+import Tabuleiros.Tabuleiro;
 import java.util.Scanner;
 public class Jogo {
     private boolean manterJogo = true;
