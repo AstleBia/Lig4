@@ -1,5 +1,5 @@
-package Tabuleiros;
-import Jogador.Jogador;
+package tabuleiros;
+import jogador.Jogador;
 
 public class Lig4Turbo extends Tabuleiro {
     public void jogada(int coluna, Jogador jogador){

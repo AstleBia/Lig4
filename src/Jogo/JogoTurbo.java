@@ -1,5 +1,5 @@
-package Jogo;
-import Tabuleiros.Lig4Turbo;
+package jogo;
+import tabuleiros.Lig4Turbo;
 
 
 public class JogoTurbo extends Jogo {

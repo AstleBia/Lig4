@@ -1,5 +1,5 @@
-package Tabuleiros;
-import Jogador.Jogador;
+package tabuleiros;
+import jogador.Jogador;
 public class Tabuleiro {
     private int linhas = 6;
     private int colunas = 7;
