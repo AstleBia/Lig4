@@ -1,4 +1,5 @@
 package tabuleiros;
+import exceptions.ValorInvalido;
 import jogador.Jogador;
 
 public interface InterfaceTabuleiro {
@@ -8,7 +9,7 @@ public interface InterfaceTabuleiro {
     public abstract void setTabuleiro(int linha, int coluna, char valor);
     public abstract void zerarTabuleiro();
     public abstract void printarTabuleiro();
-    public abstract void jogada(int coluna, Jogador jogador);
+    public abstract void jogada(int coluna, Jogador jogador) throws ValorInvalido;
     public abstract boolean vitoria(Jogador jogador);
     public abstract boolean checarTabCheio();
 

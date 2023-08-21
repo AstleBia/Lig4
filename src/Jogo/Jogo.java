@@ -2,7 +2,7 @@ package jogo;
 import jogador.Jogador;
 import tabuleiros.Tabuleiro;
 import java.util.Scanner;
-abstract class Jogo {
+public abstract class Jogo {
     private boolean manterJogo = true;
     private boolean vezJogadorUm = true;
     private char char1,char2;
