@@ -1,6 +1,8 @@
 package tabuleiros;
 import jogador.Jogador;
-public class Tabuleiro {
+import exceptions.ValorInvalido;
+import jogo.Jogo;
+public class Tabuleiro implements  InterfaceTabuleiro{
     private int linhas = 6;
     private int colunas = 7;
     private char[][] tabuleiro = new char[linhas][colunas];
@@ -36,12 +38,13 @@ public class Tabuleiro {
         System.out.print("\n\n");
     }
 
-    public void jogada(int coluna, Jogador jogador){
+    public void jogada(int coluna, Jogador jogador) throws ValorInvalido{
         boolean movimentoValido = true;
         //checar se movimento é valido
         if((coluna <= 0) || (coluna > colunas)){
             movimentoValido = false;
             System.out.println("essa coluna nao existe");
+            throw new ValorInvalido(coluna);
         }
         //procurar espaco livre na coluna
         if(movimentoValido) {

@@ -1,14 +1,16 @@
 package tabuleiros;
+import exceptions.ValorInvalido;
 import jogador.Jogador;
 
-public class Lig4Turbo extends Tabuleiro {
-    public void jogada(int coluna, Jogador jogador){
+public class Lig4Turbo extends Tabuleiro implements InterfaceTabuleiro{
+    public void jogada(int coluna, Jogador jogador) throws ValorInvalido {
         char[][] tab = getTabuleiro();
         boolean movimentoValido = true;
         //checar se movimento é valido
         if((coluna <= 0) || (coluna > getColunas())){
             movimentoValido = false;
             System.out.println("essa coluna nao existe");
+            throw new ValorInvalido(coluna);
         }
         //procurar espaco livre na coluna
         if(movimentoValido) {
