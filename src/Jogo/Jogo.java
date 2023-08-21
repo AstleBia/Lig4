@@ -2,7 +2,7 @@ package jogo;
 import jogador.Jogador;
 import tabuleiros.Tabuleiro;
 import java.util.Scanner;
-public class Jogo {
+abstract class Jogo {
     private boolean manterJogo = true;
     private boolean vezJogadorUm = true;
     private char char1,char2;
@@ -26,44 +26,8 @@ public class Jogo {
         jogador1.setId(char1);
         jogador2.setId(char2);
     }
-
     public void trocarJogador(){
         vezJogadorUm = !vezJogadorUm;
     }
-    public void iniciar(){
-       Tabuleiro tab = new Tabuleiro();
-       tab.zerarTabuleiro();
-       tab.printarTabuleiro();
-       while(manterJogo){
-           int coluna;
-           if(vezJogadorUm){
-               System.out.println("Vez do jogador 1");
-               System.out.println("digite a coluna da sua jogada: ");
-               coluna = input.nextInt();
-               tab.jogada(coluna, jogador1);
-               if(tab.vitoria(jogador1)){
-                   manterJogo=false;
-               }
-               if(tab.checarTabCheio()){
-                   System.out.println("empate");
-                   manterJogo = false;
-               }
-           }
-           else{
-               System.out.println("Vez do jogador 2");
-               System.out.println("digite a coluna da sua jogada: ");
-               coluna = input.nextInt();
-               tab.jogada(coluna,jogador2);
-               if(tab.vitoria(jogador2)){
-                   manterJogo = false;
-               }
-               if(tab.checarTabCheio()){
-                   System.out.println("empate");
-                   manterJogo = false;
-               }
-           }
-           tab.printarTabuleiro();
-           trocarJogador();
-       }
-    }
+    public abstract void iniciar();
 }

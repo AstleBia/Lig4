@@ -10,7 +10,7 @@ public class Main {
         System.out.println("Para turbo digite '2'");
         int modoDeJogo = input.nextInt();
         if(modoDeJogo == 1){
-            Jogo jogo = new Jogo();
+            JogoNormal jogo = new JogoNormal();
             jogo.criarJogadores();
             jogo.iniciar();
         }
