@@ -77,6 +77,9 @@ public class GuiTabuleiroTurbo implements ActionListener{
                                 textfield.setText("Empate!");
                                 pararJogo();
                             }
+                            else if(tab.checarColunaCheia(j+1)){
+                                JOptionPane.showMessageDialog(null,"Jogada Invalida");
+                            }
                             else{
                                 trocarJogador();
                                 textfield.setText("Jogador 2");
