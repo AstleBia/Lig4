@@ -9,6 +9,12 @@ public abstract class Jogo {
     Scanner input = new Scanner(System.in);
     Jogador jogador1 = new Jogador("jogador 1");
     Jogador jogador2 = new Jogador("jogador 2");
+    public char getChar1(){
+        return char1;
+    }
+    public char getChar2(){
+        return char2;
+    }
     public boolean getManterJogo(){
         return manterJogo;
     }

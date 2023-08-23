@@ -19,7 +19,13 @@ public class Tabuleiro implements  InterfaceTabuleiro{
     public void setTabuleiro(int linha, int coluna,char valor){
         this.tabuleiro[linha][coluna] = valor;
     }
-
+    private int linha;
+    public int getLinha(){
+        return linha;
+    }
+    public char getPosicao(int linha,int coluna){
+        return tabuleiro[linha][coluna];
+    }
     public void zerarTabuleiro(){
         for(int x = 0; x<linhas; x++){
             for(int y = 0; y<colunas;y++){
@@ -41,7 +47,7 @@ public class Tabuleiro implements  InterfaceTabuleiro{
     public void jogada(int coluna, Jogador jogador) throws ValorInvalido{
         boolean movimentoValido = true;
         //checar se movimento é valido
-        if((coluna <= 0) || (coluna > colunas)){
+        if((coluna <= 0) || (coluna > colunas) || checarColunaCheia(coluna)){
             movimentoValido = false;
             System.out.println("essa coluna nao existe");
             throw new ValorInvalido(coluna);
@@ -51,6 +57,7 @@ public class Tabuleiro implements  InterfaceTabuleiro{
             for (int x = linhas - 1; x >= 0; x--) {
                 if (tabuleiro[x][coluna-1] == '0') {
                     tabuleiro[x][coluna-1] = jogador.getId();
+                    linha = x;
                     break;
                 }
             }
@@ -109,5 +116,14 @@ public class Tabuleiro implements  InterfaceTabuleiro{
             }
         }
         return true;
+    }
+    public boolean checarColunaCheia(int coluna){
+        if(tabuleiro[0][coluna-1] != '0'){
+            return true;
+        }
+        else{
+            System.out.println("teste");
+            return false;
+        }
     }
 }

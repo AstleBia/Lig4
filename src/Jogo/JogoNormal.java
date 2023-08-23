@@ -1,5 +1,6 @@
 package jogo;
 import exceptions.ValorInvalido;
+import interfaceGrafica.GuiTabuleiro;
 import jogador.Jogador;
 import tabuleiros.InterfaceTabuleiro;
 import tabuleiros.Tabuleiro;
@@ -16,6 +17,8 @@ public class JogoNormal extends Jogo{
                System.out.println("Vez do jogador 1");
                System.out.println("digite a coluna da sua jogada: ");
                coluna = input.nextInt();
+               //coluna = guitab.esperarJogada();
+               //System.out.println(coluna);
                try{
                    tab.jogada(coluna, jogador1);
                    sucesso = true;

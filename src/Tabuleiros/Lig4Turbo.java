@@ -3,6 +3,10 @@ import exceptions.ValorInvalido;
 import jogador.Jogador;
 
 public class Lig4Turbo extends Tabuleiro implements InterfaceTabuleiro{
+    private int linha;
+    public int getLinha(){
+        return linha;
+    }
     public void jogada(int coluna, Jogador jogador) throws ValorInvalido {
         char[][] tab = getTabuleiro();
         boolean movimentoValido = true;
@@ -17,6 +21,7 @@ public class Lig4Turbo extends Tabuleiro implements InterfaceTabuleiro{
             for (int x = getLinhas() - 1; x >= 0; x--) {
                 if (tab[x][coluna-1] == '0') {
                     setTabuleiro(x,coluna-1, jogador.getId());
+                    linha = x;
                     if(coluna-1 == 0){
                         if(tab[x][coluna]!= '0' && tab[x][coluna]!= jogador.getId()){
                             setTabuleiro(x,coluna, jogador.getId());
