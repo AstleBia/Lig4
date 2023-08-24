@@ -49,7 +49,7 @@ public class Tabuleiro implements  InterfaceTabuleiro{
         //checar se movimento é valido
         if((coluna <= 0) || (coluna > colunas) || checarColunaCheia(coluna)){
             movimentoValido = false;
-            System.out.println("essa coluna nao existe");
+            System.out.println("Jogada Invalida");
             throw new ValorInvalido(coluna);
         }
         //procurar espaco livre na coluna
